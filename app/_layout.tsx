@@ -1,24 +1,23 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { Stack } from 'expo-router'
+import React from 'react'
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
-  );
+    <Stack screenOptions={{headerShown: false, headerTitleStyle: {
+      color: "red"
+    }}}>
+        {/* <Stack.Screen name='(tabs)'/>
+        <Stack.Screen name='index' options={{title: "Trang chu"}}/>
+        <Stack.Screen name='about' options={{title: "Gioi thieu"}}/>
+        <Stack.Screen name='contact' options={{title: "Lien he"}}/>
+        <Stack.Screen name='product/index' options={{title: "Danh sach san pham"}}/> */}
+        {/* <Stack.Screen name='bai1'/> */}
+        {/* <Stack.Screen name='(bai2)'/> */}
+        {/* <Stack.Screen name='bai3'/> */}
+        {/* <Stack.Screen name='bai4'/> */}
+        <Stack.Screen name='product'/>
+    </Stack>
+    // dinh nghia cac route kem theo cac component tuong ung
+    
+  )
 }
